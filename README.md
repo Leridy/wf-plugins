@@ -7,6 +7,13 @@ The official WeaveForge plugins, published as a signed git plugin source
 | --- | --- |
 | `weaveforge` | `18a1aecf37b595eb` |
 
+## Plugins
+
+| Plugins | Source |
+| --- | --- |
+| `assets`, `game-starter`, `gdscript`, `godot`, `godot-export`, `project-notes` | `plugins/*` in the WeaveForge repository |
+| `game-develop`, `roguelike-develop`, `rpg-develop`, `shooter-develop`, `tower-develop` | the `996-ugc/wf-plugins` group on the team GitLab, one repository each |
+
 ## Add the source
 
 In the WeaveForge client: open Plugins, then **⋯ › Plugin sources… › Add source…**, and enter
@@ -48,7 +55,9 @@ signer, and the client checks all three on install.
    ```
 
    It builds `plugins/*`, packs and signs each new version into `packages/`,
-   and rewrites the signed index. Options: `--repo <checkout>`,
+   and rewrites the signed index. For the game plugins, clone the GitLab
+   group's repositories side by side (they build against
+   `game-develop/kit`) and pass that folder with `--plugins <folder>`. Options: `--repo <checkout>`,
    `--key <pem>`, `--publisher <binary>`. Process plugins (`project-notes`) are built
    for the current platform only; run it on each platform to add theirs.
 3. Review, commit and push this repository.
