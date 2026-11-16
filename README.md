@@ -14,7 +14,7 @@ Every plugin has its own repository in the
 
 | Plugins | Shared code (checked out beside them) |
 | --- | --- |
-| `assets`, `game-starter`, `gdscript`, `godot`, `godot-export`, `project-notes` | `plugin-kit` |
+| `assets`, `cocos`, `cocos-export`, `game-starter`, `gdscript`, `godot`, `godot-export`, `phaser-export`, `pixi-export`, `project-notes`, `unity`, `unity-export` | `plugin-kit` |
 | `game-develop`, `roguelike-develop`, `rpg-develop`, `shooter-develop`, `tower-develop` | `game-develop/kit` |
 
 ## Add the source
