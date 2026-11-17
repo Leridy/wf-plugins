@@ -1,0 +1,26 @@
+{
+  "game-starter": {
+    "commit": "3e83d3019d47762537cf646c4aa2ba177d1926bd",
+    "repository": "https://gitlab.xqhuyu.cn/996-ugc/wf-plugins/game-starter",
+    "source_base": "386aff79043c212c876b82f8fd7abc4bb23f798f",
+    "gitlab_pushed": true
+  },
+  "unity-export": {
+    "commit": "096e1a882a811626f56f5683de198bb5897b5d64",
+    "repository": "https://gitlab.xqhuyu.cn/996-ugc/wf-plugins/unity-export",
+    "source_base": "20ad86dbee7adb65e7202af8f0c018122d2cac22",
+    "gitlab_pushed": true
+  },
+  "godot-export": {
+    "commit": "f54c7e0ac70193154d485668d569710b2013eeb3",
+    "repository": "https://gitlab.xqhuyu.cn/996-ugc/wf-plugins/godot-export",
+    "source_base": "060947f27cddee3442af45fa0dfd7a137512c0ba",
+    "gitlab_pushed": true
+  },
+  "plugin-kit": {
+    "commit": "392377e7f679ef9b251683ccaac6e558bc3607ef",
+    "repository": "https://gitlab.xqhuyu.cn/996-ugc/wf-plugins/plugin-kit",
+    "source_base": "3c409277b16127a61c849ce455151fe26496487f",
+    "gitlab_pushed": true
+  }
+}

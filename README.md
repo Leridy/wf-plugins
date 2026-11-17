@@ -36,6 +36,18 @@ See the [setup and test guide](examples/godot-export/README.md),
 [manifest example](examples/godot-export/wf-plugin.toml), and
 [source archive including plugin-kit](sources/godot-export-0.5.0.tar.gz).
 
+## External dependencies across the catalog
+
+`game-starter` **0.1.1** now requires stable Godot 4.7+ and `unity-export`
+**0.2.3** requires a stable Unity 6 Editor. Both declare version queries and
+Windows registry discovery, matching the development client's installation-time
+setup flow. Existing `godot-export` **0.5.0** remains available unchanged.
+
+See the [17-plugin dependency audit and test guide](examples/external-tools/README.md)
+and [complete buildable sources](sources/external-tool-dependencies.tar.gz).
+These packages require the current development client's external-tool protocol;
+older clients reject the new fields. Existing versions are retained.
+
 ## Add the source
 
 In the WeaveForge client: open Plugins, then **⋯ › Plugin sources… › Add source…**, and enter

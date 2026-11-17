@@ -1,0 +1,50 @@
+[plugin]
+name = "game-starter"
+version = "0.1.1"
+summary = "Playable game project starters with replaceable placeholder assets."
+api = "wf:plugin@0.1.3"
+
+[permissions]
+exec = ["godot"]
+
+[[tools]]
+name = "godot"
+summary = "Godot 4.7+ editor for importing and running the platformer project"
+
+[tools.detect]
+macos = [
+    "/Applications/Godot.app/Contents/MacOS/Godot",
+    "/Applications/Godot*.app/Contents/MacOS/Godot",
+    "~/Applications/Godot*.app/Contents/MacOS/Godot",
+]
+windows = [
+    "%ProgramFiles%/Godot*/Godot*.exe",
+    "%LOCALAPPDATA%/Godot*/Godot*.exe",
+    "%USERPROFILE%/scoop/apps/godot/current/Godot*.exe",
+    "%USERPROFILE%/scoop/apps/godot/current/godot*.exe",
+]
+path = ["godot", "godot4"]
+
+# Optional installer registration hints; portable Godot distributions may not register these.
+[[tools.detect.registry]]
+hive = "HKCU"
+key = 'Software\Microsoft\Windows\CurrentVersion\App Paths\Godot*.exe'
+value = ""
+view = "both"
+
+[[tools.detect.registry]]
+hive = "HKLM"
+key = 'Software\Microsoft\Windows\CurrentVersion\App Paths\Godot*.exe'
+value = ""
+view = "both"
+
+[tools.version]
+args = ["--headless", "--version"]
+stream = "stdout"
+extract = { kind = "regex", pattern = '^\s*(?P<version>\d+\.\d+(?:\.\d+)?)\.stable(?:\.|\s|$)' }
+require = ">=4.7.0, <5.0.0"
+features = { headless = ">=4.7.0, <5.0.0" }
+
+[[contributes]]
+protocol = "wf.template/1"
+data = "templates/platformer"

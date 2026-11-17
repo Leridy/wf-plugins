@@ -1,0 +1,70 @@
+#:schema schemas/wf-plugin.schema.json
+[plugin]
+name = "unity-export"
+version = "0.2.3"
+summary = "Turn exported animations, UI kits, icons, images, maps, props, particles and 3D assets into Unity assets, prefabs and C#/xLua bindings"
+api = "wf:plugin@0.1.4"
+component = "target/wasm32-wasip2/release/wf_unity_export.wasm"
+
+[permissions]
+read = ["**"]
+platform = "read"
+exec = ["unity"]
+
+[[skills]]
+topic = "batchmode"
+path = "docs/batchmode.md"
+
+[[tools]]
+name = "unity"
+summary = "Unity 6 Editor for batchmode resource conversion (not Unity Hub)"
+detect.macos = ["/Applications/Unity/Hub/Editor/*/Unity.app/Contents/MacOS/Unity", "/Applications/Unity/Unity.app/Contents/MacOS/Unity", "~/Applications/Unity/Hub/Editor/*/Unity.app/Contents/MacOS/Unity"]
+detect.windows = ["%ProgramFiles%/Unity/Hub/Editor/*/Editor/Unity.exe", "%ProgramFiles%/Unity/Editor/Unity.exe", "%LOCALAPPDATA%/Programs/Unity/Hub/Editor/*/Editor/Unity.exe"]
+detect.path = ["Unity", "unity"]
+
+[[tools.detect.registry]]
+hive = "HKCU"
+key = 'Software\Microsoft\Windows\CurrentVersion\App Paths\Unity.exe'
+value = ""
+view = "both"
+
+[[tools.detect.registry]]
+hive = "HKLM"
+key = 'Software\Microsoft\Windows\CurrentVersion\App Paths\Unity.exe'
+value = ""
+view = "both"
+
+[tools.version]
+args = ["-version"]
+stream = "stdout"
+extract = { kind = "regex", pattern = '^\s*(?P<version>\d+\.\d+\.\d+)f\d+\s*$' }
+require = ">=6000.0.0, <7000.0.0"
+features = { batchmode = ">=6000.0.0, <7000.0.0" }
+
+[[ui.actions]]
+id = "export-unity"
+label = { en = "Export as Unity assets", zh = "导出为 Unity 资源" }
+op = "sync"
+place = "node-menu"
+when = { node_types = ["frame_animation", "character_effect", "ui", "icon", "image", "tilemap", "particle_effect", "prop", "whole_map", "scrolling_scene", "scene3d_map", "model_3d"], selection = "any", project = "mirror" }
+input.nodes = "selection"
+
+[[ui.actions]]
+id = "export-unity-force"
+label = { en = "Re-export, overwriting edits…", zh = "重新导出（覆盖修改）…" }
+op = "sync"
+place = "node-menu"
+when = { node_types = ["frame_animation", "character_effect", "ui", "icon", "image", "tilemap", "particle_effect", "prop", "whole_map", "scrolling_scene", "scene3d_map", "model_3d"], selection = "any", project = "mirror" }
+input.nodes = "selection"
+input.force = { value = true }
+
+[[ui.views]]
+op = "sync"
+title = { en = "Unity export", zh = "Unity 导出" }
+from = "table"
+renderer = { type = "table", columns = [
+  { label = { en = "Node", zh = "节点" }, kind = "node" },
+  { label = { en = "Status", zh = "状态" }, kind = "status" },
+  { label = { en = "Files", zh = "文件数" }, kind = "number" },
+  { label = { en = "Main prefab", zh = "主预制体路径" }, kind = "path" },
+] }
