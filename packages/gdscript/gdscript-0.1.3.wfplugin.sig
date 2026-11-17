@@ -1,0 +1,1 @@
+{"schema":"wf-plugin-signature/1","public_key":"8d14f132abccc721d1f3a9512a55e20af108f845c0159051f8b9700d9adc2dff","value":"4152cdda76a08473b0cfbacd3c962ac5226fd9ff1ee8e4b616d737cde698619c644e9de9e1a394f06b7278d210d1039d4cc48c477addc2b686ff8e33b889fa01"}

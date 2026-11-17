@@ -1,0 +1,131 @@
+[
+  {
+    "id": "assets",
+    "name": "WeaveForge Asset Checker",
+    "version": "0.1.6",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "cocos",
+    "name": "Cocos Project Checker",
+    "version": "0.1.1",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "cocos-export",
+    "name": "Cocos Integration",
+    "version": "0.1.3",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "game-develop",
+    "name": "Godot Game Foundation",
+    "version": "0.1.2",
+    "package_entries": 27,
+    "templates": [
+      "starter"
+    ]
+  },
+  {
+    "id": "game-starter",
+    "name": "Platformer Templates",
+    "version": "0.1.2",
+    "package_entries": 20,
+    "templates": [
+      "platformer"
+    ]
+  },
+  {
+    "id": "gdscript",
+    "name": "GDScript Code Checker",
+    "version": "0.1.3",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "godot",
+    "name": "Godot Project Checker",
+    "version": "0.1.6",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "godot-export",
+    "name": "Godot Integration",
+    "version": "0.5.1",
+    "package_entries": 7,
+    "templates": []
+  },
+  {
+    "id": "phaser-export",
+    "name": "Phaser Integration",
+    "version": "0.1.1",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "pixi-export",
+    "name": "PixiJS Integration",
+    "version": "0.1.1",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "roguelike-develop",
+    "name": "Roguelike Templates",
+    "version": "0.5.1",
+    "package_entries": 258,
+    "templates": [
+      "dungeon",
+      "survivors",
+      "rooms"
+    ]
+  },
+  {
+    "id": "rpg-develop",
+    "name": "RPG Templates",
+    "version": "0.4.1",
+    "package_entries": 134,
+    "templates": [
+      "jrpg",
+      "tactics",
+      "action"
+    ]
+  },
+  {
+    "id": "shooter-develop",
+    "name": "Shooter Templates",
+    "version": "0.3.2",
+    "package_entries": 103,
+    "templates": [
+      "fps",
+      "tps"
+    ]
+  },
+  {
+    "id": "tower-develop",
+    "name": "Tower Defense Templates",
+    "version": "0.4.1",
+    "package_entries": 185,
+    "templates": [
+      "godot-fixed-route"
+    ]
+  },
+  {
+    "id": "unity",
+    "name": "Unity Project Checker",
+    "version": "0.1.2",
+    "package_entries": 6,
+    "templates": []
+  },
+  {
+    "id": "unity-export",
+    "name": "Unity Integration",
+    "version": "0.2.4",
+    "package_entries": 7,
+    "templates": []
+  }
+]

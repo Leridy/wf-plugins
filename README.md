@@ -14,7 +14,7 @@ Every plugin has its own repository in the
 
 | Plugins | Shared code (checked out beside them) |
 | --- | --- |
-| `assets`, `cocos`, `cocos-export`, `game-starter`, `gdscript`, `godot`, `godot-export`, `phaser-export`, `pixi-export`, `project-notes`, `unity`, `unity-export` | `plugin-kit` |
+| `assets`, `cocos`, `cocos-export`, `game-starter`, `gdscript`, `godot`, `godot-export`, `phaser-export`, `pixi-export`, `unity`, `unity-export` | `plugin-kit` |
 | `game-develop`, `roguelike-develop`, `rpg-develop`, `shooter-develop`, `tower-develop` | `game-develop/kit` |
 
 ## Runtime compatibility
@@ -92,9 +92,39 @@ signer, and the client checks all three on install.
 
    It builds each plugin, packs and signs each new version into `packages/`,
    and rewrites the signed index. Options: `--key <pem>`, `--publisher <binary>`.
-   Process plugins (`project-notes`) are built for the current platform only;
+   Process plugins (such as the separately maintained `project-notes` example) are built for the current platform only;
    run it on each platform to add theirs.
-3. Review, commit and push this repository.
+3. Apply the default-catalog policy and re-sign the index:
+
+   ```sh
+   bun scripts/curate-index.ts --key ~/.config/wf-plugins/signing-key.pem
+   ```
+
+   This removes `project-notes` from discovery while retaining its historical packages.
+   Run it after **every** index rebuild, including publication of unrelated plugins.
+4. Review, commit and push this repository.
 
 The index must keep its signer. Keep the private key out of this
 repository; losing it means every user has to add the source again.
+
+## Catalog cleanup and unified templates
+
+The default catalog now contains **16 plugins**. `project-notes` is a developer
+example, not a bundled user feature; it is excluded from the index, not uninstalled
+from users' machines. Its GitLab source and historical package remain available.
+
+Human-readable names distinguish project checkers, engine integration and game
+templates. Stable plugin IDs, CLI commands and lockfile identities are unchanged.
+These new releases and the catalog's `display_name` metadata require the current
+development client from `codex/external-tool-discovery`; older clients which reject
+unknown manifest/index fields cannot consume this catalog revision. No desktop
+release is implied by this plugin publication.
+
+Install a template plugin, then open **Plugins → Templates**. There are **11**
+template entries from six plugins: platformer; general Godot starter; tower defense;
+dungeon, survivors and rooms roguelikes; JRPG, tactics and action RPG; FPS and TPS.
+Each opens the shared directory/parameter form. Existing `new`, `lint` and specialist
+operations remain available. The RPG whole-map add-on stays an operation for existing
+projects, not a separate new-game template. JRPG and Action templates include its kit.
+
+See [release details and validation](examples/catalog-cleanup/README.md).

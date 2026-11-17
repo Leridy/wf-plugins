@@ -1,0 +1,68 @@
+[
+  {
+    "plugin": "game-develop",
+    "template": "starter",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "tower-develop",
+    "template": "godot-fixed-route",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "roguelike-develop",
+    "template": "dungeon",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "roguelike-develop",
+    "template": "survivors",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "roguelike-develop",
+    "template": "rooms",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "rpg-develop",
+    "template": "jrpg",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "rpg-develop",
+    "template": "tactics",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "rpg-develop",
+    "template": "action",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "shooter-develop",
+    "template": "fps",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "shooter-develop",
+    "template": "tps",
+    "exit": 0,
+    "errors": []
+  },
+  {
+    "plugin": "game-starter",
+    "template": "platformer",
+    "exit": 0,
+    "errors": []
+  }
+]

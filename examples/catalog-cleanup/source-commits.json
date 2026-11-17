@@ -1,0 +1,20 @@
+{
+  "assets": "527b3f6df605768b8d4d572b9dcbd68ce9cb7992",
+  "cocos": "5a33c6379d918801c0ddc9c6045482f2f0d6c3ef",
+  "cocos-export": "832eb2b7d312afee0d7df1f78b2aa7697e5580e0",
+  "game-develop": "91d51b736f932f22333bb3086d0c12bab416df1d",
+  "game-starter": "31633535289a8bd6e61103e71b5f9e511c9e034e",
+  "gdscript": "23243d154a19ed7628d2125c7b7cbe169784059d",
+  "godot": "6fae4587d52d81bb59e77c5076d370903ac4dc63",
+  "godot-export": "e98d67997f2eb699ec7fde6ed55064c26545a8f3",
+  "phaser-export": "493089341860be7dff8b11c4c765d6990b2d23fd",
+  "pixi-export": "6c2cd4edef876f54e7bec08f221fd3282c32e57d",
+  "plugin-kit": "189e5a9df36373372f8db5b21e8af8376658b1e4",
+  "project-notes": "b2234216de8ecc8d26728c1a35928b219352a1e9",
+  "roguelike-develop": "6428c309b57f920ec4f6f5c4d9acae0c995a6c49",
+  "rpg-develop": "0be9b37468fe9efe060e4facb2904a56f91bfbfd",
+  "shooter-develop": "b7b3292420279f1f0d41ce39d5a677b8d2c51ef1",
+  "tower-develop": "4bbb0d66b004ed8bc49dedeffd043278451e4229",
+  "unity": "624c41c57deec15e9ab8711d453dadb4919641ee",
+  "unity-export": "512f40ee0e5a2ca20e53e231fdd49901ca2b119c"
+}
