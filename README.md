@@ -17,6 +17,13 @@ Every plugin has its own repository in the
 | `assets`, `cocos`, `cocos-export`, `game-starter`, `gdscript`, `godot`, `godot-export`, `phaser-export`, `pixi-export`, `project-notes`, `unity`, `unity-export` | `plugin-kit` |
 | `game-develop`, `roguelike-develop`, `rpg-develop`, `shooter-develop`, `tower-develop` | `game-develop/kit` |
 
+## Runtime compatibility
+
+`cocos-export` 0.1.2 declares the actual `wf:plugin@0.1.4` guest API used by its component,
+fixing the incorrect 0.1.3 declaration in 0.1.0–0.1.1.
+It requires a client with plugin API 0.1.4 support, as do `godot-export` 0.4.5+ and
+`unity-export` 0.2.1+. Update the client when an older runtime rejects these versions.
+
 ## Add the source
 
 In the WeaveForge client: open Plugins, then **⋯ › Plugin sources… › Add source…**, and enter
