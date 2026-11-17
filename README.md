@@ -24,6 +24,18 @@ fixing the incorrect 0.1.3 declaration in 0.1.0–0.1.1.
 It requires a client with plugin API 0.1.4 support, as do `godot-export` 0.4.5+ and
 `unity-export` 0.2.1+. Update the client when an older runtime rejects these versions.
 
+## Godot discovery and headless acceptance
+
+`godot-export` **0.5.0** declares a stable Godot `>=4.3.0, <5.0.0` dependency,
+version checks and Windows registry hints. It adds `headless-import` and bounded
+`headless-run` operations. This acceptance release requires the current development
+client with the external-tool protocol and API 0.1.4 support; older clients reject
+its manifest.
+
+See the [setup and test guide](examples/godot-export/README.md),
+[manifest example](examples/godot-export/wf-plugin.toml), and
+[source archive including plugin-kit](sources/godot-export-0.5.0.tar.gz).
+
 ## Add the source
 
 In the WeaveForge client: open Plugins, then **⋯ › Plugin sources… › Add source…**, and enter

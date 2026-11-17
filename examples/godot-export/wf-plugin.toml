@@ -1,0 +1,82 @@
+#:schema schemas/wf-plugin.schema.json
+[plugin]
+name = "godot-export"
+version = "0.5.0"
+summary = "Turn exported animations, UI kits, maps, particles and 3D assets into Godot resources"
+api = "wf:plugin@0.1.4"
+component = "target/wasm32-wasip2/release/wf_godot_export.wasm"
+
+[permissions]
+read = ["**"]
+platform = "read"
+exec = ["godot"]
+
+[[tools]]
+name = "godot"
+summary = "Godot 4.3+ editor for headless resource import, conversion and scene runs"
+
+[tools.detect]
+macos = [
+    "/Applications/Godot.app/Contents/MacOS/Godot",
+    "/Applications/Godot*.app/Contents/MacOS/Godot",
+    "~/Applications/Godot*.app/Contents/MacOS/Godot",
+]
+windows = [
+    "%ProgramFiles%/Godot*/Godot*.exe",
+    "%LOCALAPPDATA%/Godot*/Godot*.exe",
+    "%USERPROFILE%/scoop/apps/godot/current/Godot*.exe",
+    "%USERPROFILE%/scoop/apps/godot/current/godot*.exe",
+]
+path = ["godot", "godot4"]
+
+# Optional installer registration hints; portable Godot distributions may not register these.
+[[tools.detect.registry]]
+hive = "HKCU"
+key = 'Software\Microsoft\Windows\CurrentVersion\App Paths\Godot*.exe'
+value = ""
+view = "both"
+
+[[tools.detect.registry]]
+hive = "HKLM"
+key = 'Software\Microsoft\Windows\CurrentVersion\App Paths\Godot*.exe'
+value = ""
+view = "both"
+
+[tools.version]
+args = ["--headless", "--version"]
+stream = "stdout"
+extract = { kind = "regex", pattern = '^\s*(?P<version>\d+\.\d+(?:\.\d+)?)\.stable(?:\.|\s|$)' }
+require = ">=4.3.0, <5.0.0"
+features = { headless = ">=4.3.0, <5.0.0" }
+
+[[skills]]
+topic = "headless"
+path = "docs/headless.md"
+
+[[ui.actions]]
+id = "export-godot"
+label = { en = "Export as Godot resources", zh = "导出为 Godot 资源" }
+op = "sync"
+place = "node-menu"
+when = { node_types = ["frame_animation", "character_effect", "ui", "tilemap", "particle_effect", "whole_map", "scrolling_scene", "scene3d_map", "model_3d"], selection = "any", project = "mirror" }
+input.nodes = "selection"
+
+[[ui.actions]]
+id = "export-godot-force"
+label = { en = "Re-export, overwriting edits…", zh = "重新导出（覆盖修改）…" }
+op = "sync"
+place = "node-menu"
+when = { node_types = ["frame_animation", "character_effect", "ui", "tilemap", "particle_effect", "whole_map", "scrolling_scene", "scene3d_map", "model_3d"], selection = "any", project = "mirror" }
+input.nodes = "selection"
+input.force = { value = true }
+
+[[ui.views]]
+op = "sync"
+title = { en = "Godot export", zh = "Godot 导出" }
+from = "table"
+renderer = { type = "table", columns = [
+  { label = { en = "Node", zh = "节点" }, kind = "node" },
+  { label = { en = "Status", zh = "状态" }, kind = "status" },
+  { label = { en = "Files", zh = "文件数" }, kind = "number" },
+  { label = { en = "Main scene", zh = "主场景路径" }, kind = "path" },
+] }
