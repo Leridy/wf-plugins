@@ -1,3 +1,7 @@
 {
-  "excluded": ["project-notes"]
+  "excluded": [
+    "cocos",
+    "cocos-export",
+    "project-notes"
+  ]
 }

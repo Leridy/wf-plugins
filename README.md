@@ -14,8 +14,15 @@ Every plugin has its own repository in the
 
 | Plugins | Shared code (checked out beside them) |
 | --- | --- |
-| `assets`, `cocos`, `cocos-export`, `game-starter`, `gdscript`, `godot`, `godot-export`, `phaser-export`, `pixi-export`, `unity`, `unity-export` | `plugin-kit` |
+| `assets`, `cocos-tool`, `game-starter`, `gdscript`, `godot`, `godot-export`, `phaser-export`, `pixi-export`, `unity`, `unity-export` | `plugin-kit` |
 | `game-develop`, `roguelike-develop`, `rpg-develop`, `shooter-develop`, `tower-develop` | `game-develop/kit` |
+
+## CocosTool
+
+**CocosTool** (`cocos-tool`) combines the former Cocos Project Checker and Cocos
+Integration into one plugin. It offers `lint` and `sync` for Cocos Creator
+3.x. The two former plugin IDs are retired from the default catalog. See the
+[migration and legacy lock guide](examples/cocos-tool/README.md).
 
 ## Runtime compatibility
 
@@ -100,7 +107,7 @@ signer, and the client checks all three on install.
    bun scripts/curate-index.ts --key ~/.config/wf-plugins/signing-key.pem
    ```
 
-   This removes `project-notes` from discovery while retaining its historical packages.
+   This applies the catalog exclusions while retaining historical packages.
    Run it after **every** index rebuild, including publication of unrelated plugins.
 4. Review, commit and push this repository.
 
@@ -109,7 +116,7 @@ repository; losing it means every user has to add the source again.
 
 ## Catalog cleanup and unified templates
 
-The default catalog now contains **16 plugins**. `project-notes` is a developer
+The default catalog contains **15 plugins**. `project-notes` is a developer
 example, not a bundled user feature; it is excluded from the index, not uninstalled
 from users' machines. Its GitLab source and historical package remain available.
 
