@@ -2,6 +2,9 @@
   "excluded": [
     "cocos",
     "cocos-export",
-    "project-notes"
+    "gdscript",
+    "godot",
+    "project-notes",
+    "unity"
   ]
 }
