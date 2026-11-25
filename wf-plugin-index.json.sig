@@ -1,1 +1,1 @@
-{"schema":"wf-plugin-signature/1","public_key":"8d14f132abccc721d1f3a9512a55e20af108f845c0159051f8b9700d9adc2dff","value":"7989c81e7be1ce60b9aedb207d10807dbde5dff927ef2b76bfa7c07fa23fc1ef984e1dd93344106b4c13449b0b5d1615ac30d5fcdc6fbe6dfe5bdf906a453c0e"}
+{"schema":"wf-plugin-signature/1","public_key":"8d14f132abccc721d1f3a9512a55e20af108f845c0159051f8b9700d9adc2dff","value":"c7e23348d8a4200f2e6b33019d3b4bb6d572dd920e15404a56959f71cbdb76793a576b6d58271a34d513f14404dddffc441b24e6f8c9c5f54a108a41b5bad006"}
